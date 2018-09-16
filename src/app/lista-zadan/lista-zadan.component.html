@@ -1,0 +1,4 @@
+<ul *ngFor="let category of categories" (click)="expand($event)" type="1">{{category.name}}
+    <li *ngFor="let child of category.children;index as i"  class="exercise">{{i+1}}.{{child.name}}</li>
+  </ul>
+  <a routerLink="/animacje"  routerLinkActive="active"></a>
