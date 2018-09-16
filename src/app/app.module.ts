@@ -8,9 +8,9 @@ import { ZmianaKoloruProbaComponent } from './animacje/zmiana-koloru/proba/proba
 import { ListaZadanComponent } from './lista-zadan/lista-zadan.component';
 const appRoutes: Routes = [
   { path: '', component: ListaZadanComponent },
-  { path: 'animacje', component: ZmianaKoloruComponent },
-  // { path: 'Animacje-1/zmiana-koloru/rozwiazanie', component: ZmianaKoloruRozwiazanieComponent },
-  // { path: 'Animacje-1/zmiana-koloru/proba', component: ZmianaKoloruProbaComponent },
+  { path: 'Animacje-1/zmiana-koloru', component: ZmianaKoloruComponent },
+  { path: 'Animacje-1/zmiana-koloru/rozwiazanie', component: ZmianaKoloruRozwiazanieComponent },
+  { path: 'Animacje-1/zmiana-koloru/proba', component: ZmianaKoloruProbaComponent },
   // { path: '**', component: AppComponent }
 ];
 @NgModule({

@@ -13,7 +13,7 @@ export class ListaZadanComponent implements OnInit {
   categories = [
     {
       name: 'Animacje', children: [
-        { name: 'Zmiana koloru' },
+        { name: 'Zmiana koloru',routerLink:'' },
         { name: 'Zmiana opacity' }
       ]
     },

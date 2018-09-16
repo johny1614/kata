@@ -1,0 +1,22 @@
+// Zadanie 1
+.pure-css{
+    animation: doZielonego 2000ms ease-in 0.4s;
+}
+@keyframes doZielonego{
+    100% {background-color:green}
+}
+
+// Zadanie 2
+.pure-css-still-green{
+    animation: doZielonego 2000ms ease-in 0.4s;
+    animation-fill-mode: forwards
+}
+
+// Zadanie 3
+.pure-css-50-violet-still-green{
+    animation: doZielonegoPrzezNiebieski 2000ms ease-in 0.4s forwards;
+}
+@keyframes doZielonegoPrzezNiebieski{
+    100% {background-color:green}
+    50% {background-color:violet}
+}
