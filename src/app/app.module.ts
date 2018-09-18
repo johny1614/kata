@@ -6,6 +6,7 @@ import { ZmianaKoloruComponent } from './animacje/zmiana-koloru/zmiana-koloru.co
 import { ZmianaKoloruRozwiazanieComponent } from './animacje/zmiana-koloru/rozwiazanie/rozwiazanie.component';
 import { ZmianaKoloruProbaComponent } from './animacje/zmiana-koloru/proba/proba.component';
 import { ListaZadanComponent } from './lista-zadan/lista-zadan.component';
+import { KategoriaComponent } from './lista-zadan/kategoria/kategoria.component';
 const appRoutes: Routes = [
   { path: '', component: ListaZadanComponent },
   { path: 'Animacje-1/zmiana-koloru', component: ZmianaKoloruComponent },
@@ -19,7 +20,8 @@ const appRoutes: Routes = [
     ZmianaKoloruComponent,
     ZmianaKoloruRozwiazanieComponent,
     ZmianaKoloruProbaComponent,
-    ListaZadanComponent
+    ListaZadanComponent,
+    KategoriaComponent
   ],
   imports: [
     BrowserModule,

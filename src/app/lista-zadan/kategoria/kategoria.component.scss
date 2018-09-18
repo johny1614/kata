@@ -1,0 +1,13 @@
+.exercise-name{
+    display:block;
+    margin-left:10px;
+    font-size:1em;
+}
+.exercise-name:hover, .category-name:hover{
+    cursor: pointer;
+    color:blue;
+}
+.category-name{
+    font-size:2em;
+    font-weight: 600;
+}
