@@ -1,0 +1,8 @@
+.pure-css{
+animation: 6000ms toGreen forwards;
+}
+@keyframes toGreen{
+    100% {background-color:green;transform:rotate(360deg)}
+    70% {background-color:violet;transform:rotate(0deg)}
+
+}

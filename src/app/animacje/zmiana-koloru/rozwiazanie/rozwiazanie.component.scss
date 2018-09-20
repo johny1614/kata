@@ -20,3 +20,24 @@
     100% {background-color:green}
     50% {background-color:violet}
 }
+// Zadanie 4
+.pure-css-rotate{
+    animation: rotate 3000ms forwards;
+}
+@keyframes rotate{
+    100% {background-color:green;transform:rotate(360deg)}
+}
+
+// Zadanie 5
+.pure-css-rotate6{
+    animation: rotate 3000ms forwards ;
+    animation-iteration-count: 6;
+}
+
+.pure-css-no-percents{
+    animation:noPerc 6000ms;
+}
+@keyframes noPerc{
+    from {background-color:green}
+    to {background-color:red}
+}

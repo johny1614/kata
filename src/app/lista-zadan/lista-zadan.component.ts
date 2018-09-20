@@ -14,14 +14,19 @@ export class ListaZadanComponent implements OnInit {
   categories = [
     {
       name: 'Animacje', exercises: [
-        { name: 'Zmiana koloru', routerLink: '/Animacje-1/zmiana-koloru' },
-        { name: 'Zmiana opacity' }
+        { name: 'Czysty css - animation', routerLink: '/Animacje-1/czysty-css' },
+        { name: 'Czysty css - transition', routerLink: '/Animacje-2/czysty-css-transition' }
       ]
     },
     {
       name: 'Observable', exercises: [
         { name: 'Zegarek z jednego observablesa' },
         { name: '3 Observablesy' }
+      ]
+    },
+    {
+      name:'Angular forms',exercises:[
+        {name: 'Walidacja',routerLink:'/Angular-Forms-1/Walidacja'}
       ]
     }
   ]

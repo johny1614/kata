@@ -1,0 +1,29 @@
+<p>1.Walidacja na required</p>
+<form #f1="ngForm" (ngSubmit)="onSubmit1(f1)">
+  <input ngModel name="firstInput" required>
+  <button class="btn btn-primary btn-submit" type="submit" [disabled]="!f1.valid">Submit</button>
+</form>
+<p>2.Walidacja na required z komunikatem</p>
+
+<form #f2="ngForm" (ngSubmit)="onSubmit2(f2)">
+  <input ngModel name="firstInput" required #lokalRefFirstInput="ngModel">
+  <span *ngIf="!lokalRefFirstInput.valid && lokalRefFirstInput.touched">Write something u coward!</span>
+  <button class="btn btn-primary btn-submit" type="submit">Submit</button>
+</form>
+<p>3.Do inputa możemy dolożyć ngModel [ngModel] i [(ngModel)] - ktora opcje w jakiej sytuacji uzyjemy?</p>
+ngModel - Gdy jest to po prostu kontrolka
+[ngModel] - Gdy chcemy dodać startową wartosc 
+[(ngModel)] - Gdy chcemy przybindować do jakiego s propertiesa
+<p>4.Przycisk ktory zmieni nam wartosc forma</p>
+<form #f3="ngForm" (ngSubmit)="onSubmit3(f3)">
+    <input ngModel name="firstInput" required>
+    <button class="btn btn-primary btn-submit" type="submit">Submit</button>
+    <button (click)="changeValue(f3)">changeValue</button>
+  </form>
+<p>5.Przycisk ktory zresetuje forma - o dziwo od razu po zresetowaniu tez submituje</p>
+<form #f5="ngForm" (ngSubmit)="onSubmit3(f5)">
+    <input ngModel name="firstInput" required>
+    <button class="btn btn-primary btn-submit" type="submit">Submit</button>
+    <button (click)="resetForm(f5)">reset</button>
+  </form>
+  
