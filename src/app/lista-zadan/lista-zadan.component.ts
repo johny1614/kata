@@ -15,7 +15,7 @@ export class ListaZadanComponent implements OnInit {
     {
       name: 'Animacje', exercises: [
         { name: 'Czysty css - animation', routerLink: '/Animacje-1/czysty-css' },
-        { name: 'Czysty css - transition', routerLink: '/Animacje-2/czysty-css-transition' }
+        { name: 'Czysty css - transition', routerLink: '/Animacje-2/transition' }
       ]
     },
     {
@@ -28,7 +28,13 @@ export class ListaZadanComponent implements OnInit {
       name:'Angular forms',exercises:[
         {name: 'Walidacja',routerLink:'/Angular-Forms-1/Walidacja'}
       ]
-    }
+    },
+    {
+      name: 'TypeScript', exercises: [
+        { name: 'Typy', routerLink: '/Typescipt/typy' },
+      ]
+    },
+
   ]
 
   expand(categorySource: MouseEvent) {

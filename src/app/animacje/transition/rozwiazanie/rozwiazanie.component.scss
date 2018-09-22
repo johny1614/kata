@@ -1,0 +1,14 @@
+.redSquare{
+    background-color:red
+}
+// Zad1
+.toGreen:hover{
+    background-color:green;
+    transition: background-color 500ms;
+}
+// Zad2
+.obrot:hover{
+    background-color:green;
+    transform:rotate(360deg);
+    transition: background-color 500ms,transform 1s;    
+}
