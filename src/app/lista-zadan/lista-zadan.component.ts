@@ -15,7 +15,8 @@ export class ListaZadanComponent implements OnInit {
     {
       name: 'Animacje', exercises: [
         { name: 'Czysty css - animation', routerLink: '/Animacje-1/czysty-css' },
-        { name: 'Czysty css - transition', routerLink: '/Animacje-2/transition' }
+        { name: 'Czysty css - transition', routerLink: '/Animacje-2/transition' },
+        { name: 'Angular animations', routerLink: '/Animacje-3/angular-animations' }
       ]
     },
     {

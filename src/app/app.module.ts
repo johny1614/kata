@@ -1,3 +1,4 @@
+import { BrowserAnimationsModule } from '@angular/platform-browser/animations';
 import { BrowserModule } from '@angular/platform-browser';
 import { NgModule } from '@angular/core';
 import { RouterModule, Routes } from '@angular/router';
@@ -17,6 +18,9 @@ import { TypyRozwiazanieComponent } from './typescript/typy/rozwiazanie/rozwiaza
 import { TransitionComponent } from './animacje/transition/transition.component';
 import { TransitionProbaComponent } from './animacje/transition/proba/proba.component';
 import { TransitionRozwiazanieComponent } from './animacje/transition/rozwiazanie/rozwiazanie.component';
+import { AngularAnimationsComponent } from './animacje/angular-animations/angular-animations.component';
+import { AngularAnimationsProbaComponent } from './animacje/angular-animations/proba/proba.component';
+import { AngularAnimationsRozwiazanieComponent } from './animacje/angular-animations/rozwiazanie/rozwiazanie.component';
 /* Glowny
  <a style="margin-right: 10px" routerLink="./proba">Próba</a>
  <a routerLink="./rozwiazanie">Rozwiązanie</a> 
@@ -34,6 +38,12 @@ const appRoutes: Routes = [
   { path: 'Animacje-2/transition', component: TransitionComponent },
   { path: 'Animacje-2/transition/rozwiazanie', component: TransitionRozwiazanieComponent },
   { path: 'Animacje-2/transition/proba', component: TransitionProbaComponent },
+
+  { path: 'Animacje-3/angular-animations', component: AngularAnimationsComponent },
+  { path: 'Animacje-3/angular-animations/rozwiazanie', component: AngularAnimationsRozwiazanieComponent },
+  { path: 'Animacje-3/angular-animations/proba', component: AngularAnimationsProbaComponent },
+
+
   { path: 'Angular-Forms-1/Walidacja', component: WalidacjaComponent },
   { path: 'Angular-Forms-1/Walidacja/rozwiazanie', component: WalidacjaRozwiazanieComponent },
   { path: 'Angular-Forms-1/Walidacja/proba', component: WalidacjaProbaComponent },
@@ -59,12 +69,16 @@ const appRoutes: Routes = [
     TransitionComponent,
     TransitionProbaComponent,
     TransitionRozwiazanieComponent,
+    AngularAnimationsComponent,
+    AngularAnimationsProbaComponent,
+    AngularAnimationsRozwiazanieComponent
   ],
   imports: [
     ReactiveFormsModule,
     FormsModule,
     BrowserModule,
-    RouterModule.forRoot(appRoutes)
+    RouterModule.forRoot(appRoutes),
+    BrowserAnimationsModule
   ],
   providers: [],
   bootstrap: [AppComponent]

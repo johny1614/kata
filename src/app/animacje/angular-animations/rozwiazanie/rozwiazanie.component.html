@@ -1,0 +1,31 @@
+<a routerLink="./..">Cofnij</a>
+<p>Animacje angulara opieraja sie o pojęcia:</p>
+<p>Triggera - Jest to definicja dyrektywy, ktora ma za zadanie animować tag html.</p>
+<p style="margin-left:20px">State - Jest to string będący przekazany do dyrektywy trigger. Opisuje on stan tagu</p>
+<p style="margin-left:20px">Transition - Definiuje w jaki sposób trigger animuje przejscia pomiędzy stanami</p>
+<p>1.Zmiana koloru - bez zadnej animacji</p>
+Kliknij!
+<div [@first]="firstState" (click)="firstState='clicked'" style="width:100px;height:100px;background-color:red;">
+</div>
+<p>2.Zmiana koloru - z animacja</p>
+Kliknij!
+<div [@second]="secondState" (click)="secondState=secondState==='clicked' ? 'default' : 'clicked'" style="width:100px;height:100px;background-color:red;">
+</div>
+<p>3.Zmiana koloru - z animacja powrotną</p>
+Kliknij!
+<div [@third]="thirdState" (click)="thirdState=thirdState==='clicked' ? 'default' : 'clicked'" style="width:100px;height:100px;background-color:red;">
+</div>
+<p>4.Zmiana koloru - 3 stany - posredni z  mousedown </p>
+Kliknij!
+<div [@fourth]="fourthState" (mousedown)="fourthState='mouseDown'" (click)="fourthState=fourthState==='clicked' ? 'default' : 'clicked'" style="width:100px;height:100px;background-color:red;">
+</div>
+<p>5.Zmiana koloru - od razu pojawia sie border z chwilą startu animacji, a kolor smukle </p>
+Kliknij!
+<div [@fifth]="fifthState" style="width:100px;height:100px;background-color:purple"
+ (click)="fifthState=fifthState==='clicked' ? 'default' : 'clicked'" >
+</div>
+<p>6.Rozszerzenie i zwęzenie - bez zadnych state'ów - tylko za pomoca animate() i style() </p>
+Kliknij!
+<div [@sixth]="sixthState" style="width:100px;height:100px;background-color:purple"
+ (click)="sixthState=sixthState==='clicked' ? 'default' : 'clicked'" >
+</div>
