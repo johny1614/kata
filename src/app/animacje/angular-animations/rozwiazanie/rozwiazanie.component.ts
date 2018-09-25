@@ -1,5 +1,5 @@
-import { Component, OnInit } from '@angular/core';
-import { trigger, state, style, transition, animate, group, keyframes, query } from '@angular/animations';
+import {Component, OnInit} from '@angular/core';
+import {trigger, state, style, transition, animate, group, keyframes, query} from '@angular/animations';
 
 @Component({
   selector: 'app-rozwiazanie',
@@ -49,65 +49,70 @@ import { trigger, state, style, transition, animate, group, keyframes, query } f
       transition('clicked->default', animate('400ms'))
     ]),
     trigger('fifth', [
-      state('default', style({
-      })),
+      state('default', style({})),
       state('clicked', style({
         'background-color': 'yellow',
         'border': '5px solid blue'
       })),
-      transition('default->clicked', [style({ 'border': '5px solid blue' }), animate('2000ms')]),
+      transition('default->clicked', [style({'border': '5px solid blue'}), animate('2000ms')]),
     ]),
     trigger('sixth', [
       transition('* => *', [
-        animate(1500, style({ 'width': '600px' })),
-        animate(900, style({ 'width': '200px' })),
-        animate(1000, style({ 'width': '*' }))
-      ]
+          animate(1500, style({'width': '600px'})),
+          animate(900, style({'width': '200px'})),
+          animate(1000, style({'width': '*'}))
+        ]
       )
     ]),
     trigger('seventh', [
       transition('default => clicked', [
-        group([
-          animate(2000, style({ 'width': '600px' })),
-          animate(700, style({ 'background-color': 'green' }))
-        ])
-      ]
+          group([
+            animate(2000, style({'width': '600px'})),
+            animate(700, style({'background-color': 'green'}))
+          ])
+        ]
       )
     ]),
     trigger('eigth',
       [
         transition('default->clicked', animate('6000ms', keyframes([
-          style({ 'background-color': 'blue', 'offset': 0.1 }),
-          style({ 'background-color': 'pink', 'offset': 0.8 }),
-          style({ 'background-color': 'yellow', 'offset': 0.9 }),
-          style({ 'background-color': 'red', 'offset': 1 }),
+          style({'background-color': 'blue', 'offset': 0.1}),
+          style({'background-color': 'pink', 'offset': 0.8}),
+          style({'background-color': 'yellow', 'offset': 0.9}),
+          style({'background-color': 'red', 'offset': 1}),
         ])))
       ]),
     trigger('nineth', [
       transition('default->clicked', [
         query('.first', [
-          style({ 'transform': 'translateY(-200px)' }),
-          animate('300ms', style({ 'transform': 'translateY(0px)' }))
+          style({'transform': 'translateY(-200px)'}),
+          animate('300ms', style({'transform': 'translateY(0px)'}))
         ]),
         query('.second', [
-          style({ 'transform': 'translateX(200px)' }),
-          animate('300ms', style({ 'transform': 'translateX(0px)' }))
+          style({'transform': 'translateX(200px)'}),
+          animate('300ms', style({'transform': 'translateX(0px)'}))
         ])
       ])
     ]),
     trigger('tenth', [
       transition('default->clicked', [
         group([
-          query('.first', [
-            style({ 'transform': 'translateY(-200px)' }),
-            animate('300ms', style({ 'transform': 'translateY(0px)' }))
-          ]),
-          query('.second', [
-            style({ 'transform': 'translateX(200px)' }),
-            animate('300ms', style({ 'transform': 'translateX(0px)' }))
-          ])
-        ]
+            query('.first', [
+              style({'transform': 'translateY(-200px)'}),
+              animate('300ms', style({'transform': 'translateY(0px)'}))
+            ]),
+            query('.second', [
+              style({'transform': 'translateX(200px)'}),
+              animate('300ms', style({'transform': 'translateX(0px)'}))
+            ])
+          ]
         )
+      ])
+    ]),
+    trigger('eleventh', [
+      transition('*->*', [
+        // style(transform:'')
+        animate(1000, style({transform: 'rotate({{numberOfRotates}}deg)'}))
       ])
     ])
 
@@ -125,7 +130,11 @@ export class AngularAnimationsRozwiazanieComponent implements OnInit {
   eigthState = 'default';
   ninethState = 'default';
   tenthState = 'default';
-  constructor() { }
+  eleventhState = 'default';
+  numberOfRotates = 1;
+
+  constructor() {
+  }
 
   ngOnInit() {
   }

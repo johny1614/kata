@@ -32,31 +32,41 @@ width:* - gwiazdka oznacza width jaki bylby bez tych naszych animacji - uzyty do
  (click)="sixthState=sixthState==='clicked' ? 'default' : 'clicked'" >
 </div>
 <p>7.Wolne rozszerzanie i szybka zmiana koloru w tym samym czasie</p>
-Do tego trzeba użyć group w animationmetadata naszego transition. group(animate(),animate()) - to animuje te obydwie 
-animacje w tej samej chwili 
+Do tego trzeba użyć group w animationmetadata naszego transition. group(animate(),animate()) - to animuje te obydwie
+animacje w tej samej chwili
 <div [@seventh]="seventhState" style="width:100px;height:100px;background-color:purple"
  (click)="seventhState=seventhState==='clicked' ? 'default' : 'clicked'" >
 </div>
-<p>8.Przejscie z purpurowego do niebieskiego,rozowego,zoltego i na koncu do czerwonego - najprosciej jak sie da</p> 
-Najprosciej jest to zrobic przy keyframes'ach. Na zasadzie: 
+<p>8.Przejscie z purpurowego do niebieskiego,rozowego,zoltego i na koncu do czerwonego - najprosciej jak sie da</p>
+Najprosciej jest to zrobic przy keyframes'ach. Na zasadzie:
 <textarea>
-        ('czas',keyframes([style({blue}),style({pink}),style({yellow})])') 
-</textarea>przy czym property 
+        ('czas',keyframes([style({blue}),style({pink}),style({yellow})])')
+</textarea>przy czym property
 css'owe offset (od 0 do 1) definiuje czas na animacje pomiedzy stylami
 <div [@eigth]="eigthState" style="width:100px;height:100px;background-color:purple"
  (click)="eigthState=eigthState==='clicked' ? 'default' : 'clicked'" >
 </div>
 <p>9.Majac parent div z dwoma childami - miej triggera na parencie - ale animuj obydwa childy zupelnie inaczej.
     Najlepiej uzyc do tego query
-<div [@nineth]="ninethState" 
+<div [@nineth]="ninethState"
  (click)="ninethState=ninethState==='clicked' ? 'default' : 'clicked'" >
  <div class="first" style="display:inline-block;background-color: yellow;width:100px;height:100px"></div>
  <div class="second" style="display:inline-block;background-color: purple;width:100px;height:100px"></div>
 </div>
 <p>10.Majac parent div z dwoma childami - miej triggera na parencie - ale animuj obydwa childy zupelnie inaczej, ale jednoczesnie.
         Query mozna tez dac w grupie!
-    <div [@tenth]="tenthState" 
+    <div [@tenth]="tenthState"
      (click)="tenthState=tenthState==='clicked' ? 'default' : 'clicked'" >
      <div class="first" style="display:inline-block;background-color: yellow;width:100px;height:100px"></div>
      <div class="second" style="display:inline-block;background-color: purple;width:100px;height:100px"></div>
     </div>
+<p>11.Za każdym kliknięciem div kręci się o 1 obrót więcej
+  <textarea style="width:700px;display:block;height:140px">
+Można do triggera zamiast stringa dac obiekt postaci: {value:value,params:{myParam:myParam}}
+Gdzie: value - to string opisujący stan (ten co normalnie go dajemy)
+Params - dodatkowe parametry przez interpolacje'
+Możemy wtedy używać parametru
+  </textarea>
+<div [@eleventh]="{value:eleventhState,params:{numberOfRotates:360*numberOfRotates}}" style="width:100px;height:100px;background-color:purple"
+     (click)="eleventhState=eleventhState==='clicked' ? 'default' : 'clicked';numberOfRotates=numberOfRotates+1;" >
+</div>
