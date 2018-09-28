@@ -21,9 +21,12 @@ import { TransitionRozwiazanieComponent } from './animacje/transition/rozwiazani
 import { AngularAnimationsComponent } from './animacje/angular-animations/angular-animations.component';
 import { AngularAnimationsProbaComponent } from './animacje/angular-animations/proba/proba.component';
 import { AngularAnimationsRozwiazanieComponent } from './animacje/angular-animations/rozwiazanie/rozwiazanie.component';
+import { ObservablesPart1Component } from './observablesy/part1/part1.component';
+import { ObservablesPart1ProbaComponent } from './observablesy/part1/proba/proba.component';
+import { ObservablesPart1RozwiazanieComponent } from './observablesy/part1/rozwiazanie/rozwiazanie.component';
 /* Glowny
  <a style="margin-right: 10px" routerLink="./proba">Próba</a>
- <a routerLink="./rozwiazanie">Rozwiązanie</a> 
+ <a routerLink="./rozwiazanie">Rozwiązanie</a>
  Proba/Rozw
 <a routerLink="./..">Cofnij</a>
 
@@ -51,6 +54,10 @@ const appRoutes: Routes = [
   { path: 'Typescipt/typy/rozwiazanie', component: TypyRozwiazanieComponent },
   { path: 'Typescipt/typy/proba', component: TypyProbaComponent },
 
+  { path: 'Observables/Part1', component: ObservablesPart1Component },
+  { path: 'Observables/Part1/rozwiazanie', component: ObservablesPart1RozwiazanieComponent },
+  { path: 'Observables/Part1/proba', component: ObservablesPart1ProbaComponent },
+
 ];
 @NgModule({
   declarations: [
@@ -71,7 +78,10 @@ const appRoutes: Routes = [
     TransitionRozwiazanieComponent,
     AngularAnimationsComponent,
     AngularAnimationsProbaComponent,
-    AngularAnimationsRozwiazanieComponent
+    AngularAnimationsRozwiazanieComponent,
+    ObservablesPart1Component,
+    ObservablesPart1ProbaComponent,
+    ObservablesPart1RozwiazanieComponent
   ],
   imports: [
     ReactiveFormsModule,

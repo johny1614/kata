@@ -20,9 +20,8 @@ export class ListaZadanComponent implements OnInit {
       ]
     },
     {
-      name: 'Observable', exercises: [
-        { name: 'Zegarek z jednego observablesa' },
-        { name: '3 Observablesy' }
+      name: 'Observablesy', exercises: [
+        { name: 'Observablesy - part1',routerLink:'/Observables/Part1'}
       ]
     },
     {
@@ -37,27 +36,4 @@ export class ListaZadanComponent implements OnInit {
     },
 
   ]
-
-  expand(categorySource: MouseEvent) {
-    // console.log(categorySource.srcElement)
-    console.log('kategorie',this.categoriesDOM)
-    console.log('exercises',this.exercisesDOM)
-    
-    // console.log(categorySource.srcElement.tagName);
-    // console.log(categorySource.srcElement.children);
-    // con
-    // if (categorySource.srcElement.tagName !== "LI") {
-    //   const exerciseList: HTMLCollection = categorySource.srcElement.children;
-    //   const actualDisplay = getComputedStyle(exerciseList[0]).display;
-    //   for (let i = 0; i < exerciseList.length; i++) {
-    //     if (actualDisplay !== 'block') {
-    //       this.renderer2.setStyle(exerciseList[i], 'display', 'block');
-    //     }
-    //     else {
-    //       this.renderer2.setStyle(exerciseList[i], 'display', 'none')
-    //     }
-    //   }
-    // }
-  }
-
 }
