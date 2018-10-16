@@ -1,7 +1,11 @@
 <p>1.Walidacja na required</p>
 <form #f1="ngForm" (ngSubmit)="onSubmit1(f1)">
+  <!-- #f1="ngForm" jest niezbedne - by miec id. ngForm - by tag byl obiektem NgForm - widac to dobrze przy evencie -->
   <input ngModel name="firstInput" required>
+  <!-- ngModel - nie jest do zadnego property zbindowane(wtedy jest niezbedny name). Poza tym mowi angularowi ze ten input jest czescia formsa-->
+  <!---->
   <button class="btn btn-primary btn-submit" type="submit" [disabled]="!f1.valid">Submit</button>
+  <!--type="submit" odnosi sie do funkcji (ngSubmit) | -->
 </form>
 <p>2.Walidacja na required z komunikatem</p>
 
@@ -9,21 +13,46 @@
   <input ngModel name="firstInput" required #lokalRefFirstInput="ngModel">
   <span *ngIf="!lokalRefFirstInput.valid && lokalRefFirstInput.touched">Write something u coward!</span>
   <button class="btn btn-primary btn-submit" type="submit">Submit</button>
+  Jak widać dopiero po wpisaniu czegos jest tekst - bo wzielismy warunek .touched
 </form>
 <p>3.Do inputa możemy dolożyć ngModel [ngModel] i [(ngModel)] - ktora opcje w jakiej sytuacji uzyjemy?</p>
 ngModel - Gdy jest to po prostu kontrolka
-[ngModel] - Gdy chcemy dodać startową wartosc 
+[ngModel] - Gdy chcemy dodać startową wartosc
 [(ngModel)] - Gdy chcemy przybindować do jakiego s propertiesa
 <p>4.Przycisk ktory zmieni nam wartosc forma</p>
 <form #f3="ngForm" (ngSubmit)="onSubmit3(f3)">
-    <input ngModel name="firstInput" required>
-    <button class="btn btn-primary btn-submit" type="submit">Submit</button>
-    <button (click)="changeValue(f3)">changeValue</button>
-  </form>
+  <input ngModel name="firstInput" required>
+  <button class="btn btn-primary btn-submit" type="submit">Submit</button>
+  <button (click)="changeValue(f3)">changeValue</button>
+</form>
 <p>5.Przycisk ktory zresetuje forma - o dziwo od razu po zresetowaniu tez submituje</p>
 <form #f5="ngForm" (ngSubmit)="onSubmit3(f5)">
-    <input ngModel name="firstInput" required>
-    <button class="btn btn-primary btn-submit" type="submit">Submit</button>
-    <button (click)="resetForm(f5)">reset</button>
-  </form>
-  
+  <input ngModel name="firstInput" required>
+  <button class="btn btn-primary btn-submit" type="submit">Submit</button>
+  <button (click)="resetForm(f5)">reset</button>
+</form>
+<p>6.(Reactive) Dwa inputy ktore twarza dwa formy - w jednej form grupie. Chcemy miec wypisane czy 1/2 form jest valid i
+  czy formGroup jest valid</p>
+
+<form [formGroup]="reactive6form">
+  <div formGroupName="userData">
+    <input formControlName="username">Username.valid:{{reactive6form.get('userData.username').valid}}
+    <input formControlName="email">Email.valid:{{reactive6form.get('userData.email').valid}}
+    Calyform.valid:{{reactive6form.get('userData').valid}}
+  </div>
+</form>
+<p>7.(Reactive)Input required - ze spanem z errorem</p>
+<form [formGroup]="reactive7form">
+  <input formControlName="username">
+  <span *ngIf="!reactive7form.get('username').valid">Kurwa źle!</span>
+</form>
+<p>8.(Reactive)Dodawanie kilku inputów (np. na hobby) - stosując arraye</p>
+<form [formGroup]="reactive8form">
+  <div formArrayName="hobbies">
+    <div *ngFor="let hobbyControl of reactive8form.get('hobbies').controls;let i = index" class="form-group">
+      <input type="text" [formControlName]="i">
+      <span *ngIf="!reactive8form.get('hobbies').controls[i].valid">Wpisz to hobby</span>
+    </div>
+  </div>
+  <button (click)="addHobby()">addHobby</button>
+</form>

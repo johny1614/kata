@@ -11,5 +11,8 @@ export class WalidacjaProbaComponent implements OnInit {
 
   ngOnInit() {
   }
+  onSubmit1(){
+    console.log('onSubmit1');
+  }
 
 }
